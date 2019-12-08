@@ -78,6 +78,7 @@ def add_question(request):
                 'message': 'Question already exist'})
     return not_implimented()
 
+# Default method for not implemented response
 def not_implimented():
     return JsonResponse({
                 'status': 'failed', 

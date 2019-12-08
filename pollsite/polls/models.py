@@ -8,8 +8,9 @@ class Question(models.Model):
     pub_date = models.DateTimeField('date published')
 
     def __str__(self):
-        return self.question_text
+        return '< '+ str(self.question_text) + ' >'
 
+    # mehod to check the is published recently
     def was_published_recently(self):
         now = timezone.now()
         return now - datetime.timedelta(days=1) <= self.pub_date <= now
@@ -22,4 +23,4 @@ class Choice(models.Model):
     votes = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.choice_text
+        return '< '+ str(self.choice_text) + ' >'
